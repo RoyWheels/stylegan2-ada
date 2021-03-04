@@ -60,7 +60,6 @@ def calc_metrics(network_pkl, metric_names, metricdata, mirror, gpus):
     dataset_options = dnnlib.EasyDict()
     if training_options is not None:
         dataset_options.update(training_options.metric_dataset_args)
-    dataset_options.resolution = Gs.output_shapes[0][-1]
     dataset_options.max_label_size = Gs.input_shapes[1][-1]
     if metricdata is not None:
         if not os.path.isdir(metricdata):
